@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Book</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="company-text">
+                <span class="company-name">ON THE GROUND</span>
+            </div>
+        </div>
+        <h1>FIELD BOOK</h1>
+    </header>
+    
+    <main>
+        <div class="main-content">
+            <div id="mapContainer" class="map-container">
+                <div id="map"></div>
+            </div>
+            
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Locations</h3>
+                    <div class="sidebar-controls">
+                        <button id="markBtn" class="mark-btn" title="Mark Current Location">
+                            <img src="images/pin-icon.svg" alt="Mark Location" class="btn-icon">
+                        </button>
+                        <button id="exportBtn" class="export-btn" title="Export to PDF">
+                            <img src="images/save-icon.svg" alt="Export PDF" class="btn-icon">
+                        </button>
+                        <button id="clearAllBtn" class="clear-all-btn" title="Clear All Locations">
+                            <img src="images/trash-icon.svg" alt="Clear All" class="btn-icon">
+                        </button>
+                    </div>
+                </div>
+                <div id="markedList" class="marked-list">
+                    <p class="empty-state">No locations marked yet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- jsPDF and html2canvas for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
